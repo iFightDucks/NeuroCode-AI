@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import connect from "./db/db.js";
 import userRoutes from "./routes/user.routes.js"
+import projectRoutes from './routes/project.routes.js';
 dotenv.config();
 
 connect();
@@ -16,5 +17,6 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/users',userRoutes);
+app.use('/projects', projectRoutes);
 
 export default app;
