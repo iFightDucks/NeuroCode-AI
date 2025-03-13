@@ -1,15 +1,29 @@
-import Redis from 'ioredis';
+import userModel from '../models/user.model.js';
 
 
-const redisClient = new Redis({
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT,
-    password: process.env.REDIS_PASSWORD
-});
 
+export const createUser = async ({
+    email, password
+}) => {
 
-redisClient.on('connect', () => {
-    console.log('Redis connected');
-})
+    if (!email || !password) {
+        throw new Error('Email and password are required');
+    }
 
-export default redisClient;
+    const hashedPassword = await userModel.hashPassword(password);
+
+    const user = await userModel.create({
+        email,
+        password: hashedPassword
+    });
+
+    return user;
+
+}
+
+export const getAllUsers = async ({ userId }) => {
+    const users = await userModel.find({
+        _id: { $ne: userId }
+    });
+    return users;
+}
