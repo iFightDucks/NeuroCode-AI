@@ -52,11 +52,11 @@ const Home = () => {
             <div className='p-6 container mx-auto'>
                 {/* Enhanced Header with Text Logo */}
                 <div className='flex flex-col md:flex-row justify-between items-center mb-12'>
-                    <div className='text-4xl md:text-5xl font-extrabold tracking-tight mb-4 md:mb-0'>
-                        <span className='bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500'>
-                            NeuroCode AI
-                        </span>
-                    </div>
+                <div className='text-2xl md:text-3xl font-extrabold tracking-tight mb-4 md:mb-0'>
+    <span className='bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500'>
+        NeuroCode AI
+    </span>
+</div>
                     <h1 className='text-xl font-medium text-white'>Welcome back, <span className='font-semibold'>{user?.name || 'User'}</span></h1>
                 </div>
 
