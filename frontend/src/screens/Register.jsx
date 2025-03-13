@@ -150,9 +150,6 @@ const Register = () => {
                             </ul>
                         </div>
                         
-                        <p className="mt-8 text-lg font-medium" style={{color: '#e0f5ff'}}>
-                            Join over 50,000 users who have already transformed their experience!
-                        </p>
                     </div>
                 </div>
             </div>
