@@ -24,7 +24,7 @@ jobs:
         run: |
           cd frontend
           npm install
-          npm run build  # Build the frontend for production
+          npm run dev
 
       - name: Build And Deploy
         id: builddeploy
