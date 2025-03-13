@@ -19,7 +19,7 @@ export const authUser = async (req, res, next) => {
             return res.status(401).send({ error: 'Unauthorized User' });
         }
 
-        const decoded = jwt.verify(token, process.env.HASH_KEY);
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.user = decoded;
         next();
     } catch (error) {
