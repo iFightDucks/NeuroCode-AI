@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.send("Backend is running successfully!");
 });
 
-app.use(cors());
+app.use(cors({ origin: "https://lively-sand-0a321151e.6.azurestaticapps.net", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
